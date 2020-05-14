@@ -4,7 +4,7 @@ class CovidTrack::Covid
 
     @@all = []
 
-     
+
 
     def self.all
         @@all
@@ -12,19 +12,19 @@ class CovidTrack::Covid
 
     def self.from_api(covidarr)
         covidarr.each do |variable|
-            self.new(statistics["deathstats"]), statistics["recoveredstats"]
-            
+            self.new(statistics["positive"]), statistics["recovered"]
+
         end
 
     end
     attr_accessor :country, :deaths
 
-    def initialize(country, deaths)
-        @country, @deaths = country, deaths
+    def initialize(positive, recovered)
+        @positive, @recovered = country, deaths
         save
     end
-    def save 
-        @@all << self 
+    def save
+        @@all << self
     end
 
 

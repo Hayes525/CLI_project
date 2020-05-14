@@ -6,6 +6,17 @@ class CovidTrack::APIManager
         res = HTTParty.get(url)
         CovidTrack::Covid.from_api(res["results"])
     end
+    def self.get_covid_current_recovered
+        url = BASE_URL  + "/us/recovered"
+        res = HTTParty.get(url)
+        CovidTrack::Covid.from_api(res["recovered"])
+
+    end
+    def self.get_covid_current_positive
+      url = BASE_URL  + "/us/positive"
+      res = HTTParty.get(url)
+      CovidTrack::Covid.from_api(res["positive"])
+    end
 
 
 end
