@@ -14,7 +14,7 @@ group :test do
   gem 'rspec',    '~> 3.4'
   gem 'simplecov', require: false
   gem 'aruba'
-  gem 'cucumber', '~> 2.3'
+  gem 'cucumber', '~> 10.0'
   gem 'webmock'
   gem 'addressable'
 end
